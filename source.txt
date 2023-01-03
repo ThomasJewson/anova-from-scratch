@@ -1,0 +1,14 @@
+Dataset:  marij1_indiv.csv
+
+Source: R. Dembo, J. Schmeidler, M. Koval (1976). "Demographic Value
+and Behavior Correlates of Marijuana Use Among Middle Class Youths",
+Journal of Health and Social Behavior, Vol. 17, pp177-187.
+
+Description: Frequency of Marijuana use and Party/Dance Participation
+among youths.
+
+Variable Names
+
+marijUse    /*  1=Never, 2= <1/Month, 3= >1/Month, 4= >1/Day  */
+party       /* 1=Not at all,  2=Somewhat, 3=A great Deal */
+numStdnt
