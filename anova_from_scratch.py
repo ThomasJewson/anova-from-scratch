@@ -1,4 +1,4 @@
-# %% Step 1: 
+# %% Step 1:
 
 import pandas as pd
 
@@ -7,4 +7,6 @@ DATA_LOC = r"https://raw.githubusercontent.com/ThomasJewson/anova-from-scratch/m
 df = pd.read_csv(DATA_LOC)
 
 df.head(5)
+# %%
+grand_mean = df["party"].mean()
 # %%
