@@ -22,3 +22,5 @@ def get_variance_within(useage_group: pd.Series):
 
 
 df["variance_within"] = usage_groups["party"].apply(get_variance_within)
+ssw = df["variance_within"].sum()
+# %%
