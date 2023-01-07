@@ -32,3 +32,11 @@ ssb = df["variance_between"].sum()
 
 ssb = sst - ssw
 # %%
+num_groups = df["marijUse"].nunique()
+num_observations = len(df)
+
+deg_of_freedom_within = num_observations - num_groups
+deg_of_freedom_between_groups = num_groups - 1
+
+f_statistic = (ssb / deg_of_freedom_between_groups) / (ssw / deg_of_freedom_within)
+f_statistic
