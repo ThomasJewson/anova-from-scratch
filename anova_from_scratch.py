@@ -13,7 +13,7 @@ df["squared_error"] = (df["party"] - grand_mean) ** 2
 sst = df["squared_error"].sum()
 
 # %%
-usage_groups = df.groupby("marijUse")
+usage_groups = df.groupby("marijUse", group_keys=False)
 grouped_means = usage_groups["party"].mean()
 
 
@@ -23,4 +23,12 @@ def get_variance_within(useage_group: pd.Series):
 
 df["variance_within"] = usage_groups["party"].apply(get_variance_within)
 ssw = df["variance_within"].sum()
+# %%
+df["variance_between"] = (
+    (usage_groups["party"].mean() - grand_mean) ** 2
+) * usage_groups["party"].count()
+
+ssb = df["variance_between"].sum()
+
+ssb = sst - ssw
 # %%
