@@ -39,4 +39,20 @@ deg_of_freedom_within = num_observations - num_groups
 deg_of_freedom_between_groups = num_groups - 1
 
 f_statistic = (ssb / deg_of_freedom_between_groups) / (ssw / deg_of_freedom_within)
-f_statistic
+
+# %%
+# H0 = Population means are equal
+# H1 = Not all population means are equal
+import scipy
+
+f_critical = scipy.stats.f.ppf(
+    q=1 - 0.05, dfn=deg_of_freedom_between_groups, dfd=deg_of_freedom_within
+)
+f_critical
+
+if f_statistic > f_critical:
+    print("Reject H0, thus, not all population means are equal.")
+else:
+    print("Cannot reject that all population means are equal")
+
+# %%
